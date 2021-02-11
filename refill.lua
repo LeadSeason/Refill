@@ -14,6 +14,7 @@ function iop(str)
 	last_str = str
 end
 
+
 function Left(n)
 	if not n then
 		r.turnLeft() 
@@ -24,7 +25,8 @@ function Left(n)
 		end
 	end
 end
-----------------------------------component.computer.beep----------------------------------------
+
+
 function Right(n)
 	if not n then
 		r.turnRight() 
@@ -32,6 +34,17 @@ function Right(n)
 		while (n >= 1) do
 			r.turnRight()
 			n = n-1
+		end
+	end
+end
+
+function Try_forward()
+	while true do
+		if r.detect() then
+			component.computer.beep(440,0.15)
+		else
+			r.forward()
+			break
 		end
 	end
 end
@@ -141,16 +154,16 @@ do
 
 	function Forword(n,replace)
 		if not n and not replace then
-			r.forward()
+			Try_forward()
 		elseif n and not replace then
 			while (n >= 1) do
-				r.forward()
+				Try_forward()
 				n = n-1
 			end
 		elseif n and replace then
 			while (n >= 1)
 			do
-				r.forward()
+				Try_forward()
 				r.select(livingrock)
 				if r.compareDown() then
 					r.swingDown()
