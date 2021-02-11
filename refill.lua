@@ -7,6 +7,7 @@ local PrintLn = true
 local loops_done = 0
 local last_str = ""
 
+
 function iop(str)
 	io.write(('\b \b'):rep(#last_str))  -- erase old line
 	io.write(str)                       -- write new line
@@ -38,6 +39,7 @@ function Right(n)
 	end
 end
 
+
 function Try_forward()
 	while true do
 		if r.detect() then
@@ -49,12 +51,14 @@ function Try_forward()
 	end
 end
 
+
 print("How many cycles? 0 to go infinitely")
 Ln = tonumber(io.read())
 if Ln == 0 then
 	Ln = 2^500 -- I know its not infinet but it will be fine
 	PrintLn = false
 end
+
 
 while (Ln >= 1)
 do
