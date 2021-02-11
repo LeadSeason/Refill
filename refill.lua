@@ -24,7 +24,7 @@ function Left(n)
 		end
 	end
 end
-
+----------------------------------component.computer.beep----------------------------------------
 function Right(n)
 	if not n then
 		r.turnRight() 
