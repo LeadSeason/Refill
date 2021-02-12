@@ -46,7 +46,6 @@ function Try_forward()
 			break
 		else
 			component.computer.beep(440,0.15)
-			break
 		end
 	end
 end
