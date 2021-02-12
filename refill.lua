@@ -42,10 +42,10 @@ end
 
 function Try_forward()
 	while true do
-		if r.detect() then
-			component.computer.beep(440,0.15)
+		if r.forward() then
+			break
 		else
-			r.forward()
+			component.computer.beep(440,0.15)
 			break
 		end
 	end
